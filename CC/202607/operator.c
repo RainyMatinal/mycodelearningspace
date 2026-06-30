@@ -7,11 +7,14 @@ int main(){
     scanf("%d %d", &hour1, &minute1);
     scanf("%d %d", &hour2, &minute2);
 
-    int t1 = hour1 * 60 + minute1;
-    int t2 = hour2 * 60 + minute2;
+    int ih = hour2 - hour1;
+    int im = minute2 - minute1;
 
-    int t = t1 - t2; 
+    if (im < 0 ){
+        im = 60 + im;
+        ih --;
+    }
 
-    printf("the time is %d hour %d minute", t/60, t%60);
+    printf("the time is %d hour %d minute", ih, im);
     return 0;
 };
